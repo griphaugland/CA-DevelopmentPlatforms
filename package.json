@@ -1,0 +1,22 @@
+{
+  "name": "ca-developmentplatforms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "aws-sdk": "latest",
+    "body-parser": "latest",
+    "dotenv": "^16.4.1",
+    "ejs": "latest",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
