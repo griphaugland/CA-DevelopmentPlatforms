@@ -14,7 +14,7 @@ app.listen(port, () => {
 
 app.use(cors());
 
-// Enable COR
+app.use(express.json());
 
 const { Pool } = pg;
 
