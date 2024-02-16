@@ -11,7 +11,11 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-app.use(express.json());
+// Enable CORS for all routes
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 const { Pool } = pg;
 
