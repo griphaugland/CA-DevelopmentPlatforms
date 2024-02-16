@@ -3,6 +3,7 @@ import "dotenv/config";
 import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import pg from "pg";
+import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -11,11 +12,9 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-// Enable CORS for all routes
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  next();
-});
+app.use(cors());
+
+// Enable COR
 
 const { Pool } = pg;
 

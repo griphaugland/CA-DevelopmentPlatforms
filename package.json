@@ -10,6 +10,7 @@
   "dependencies": {
     "aws-sdk": "latest",
     "body-parser": "latest",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.4",
     "ejs": "latest",
     "express": "^4.18.2",
