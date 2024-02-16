@@ -5,13 +5,13 @@ import jwt from "jsonwebtoken";
 import pg from "pg";
 
 const app = express();
-const port = 3000;
-
-app.use(express.json());
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+app.use(express.json());
 
 const { Pool } = pg;
 
