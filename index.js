@@ -283,16 +283,13 @@ app.post("/addiction", async (req, res) => {
 });
 
 app.get("/addictions", async (req, res) => {
-  const { user_id } = req.body;
   const token = req.headers.authorization.split(" ")[1];
   try {
     const verifiedToken = jwt.verify(token, process.env.TOKEN_HASH_KEY);
-    console.log(verifiedToken.user_id);
     if (verifiedToken) {
-      console.log(verifiedToken.user);
       const result = await pool.query(
         "SELECT * FROM addiction_items WHERE user_id = $1",
-        [user_id]
+        [verifiedToken.id]
       );
       res.json(result.rows);
     } else {
