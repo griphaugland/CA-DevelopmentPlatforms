@@ -408,9 +408,12 @@ async function insertIntoUsers(
     throw err;
   }
 }
-async function insertIntoAddictions(title, description, money_saved_per_month) {
-  const verifiedToken = jwt.verify(token, process.env.TOKEN_HASH_KEY);
-  const user_id = verifiedToken.id;
+async function insertIntoAddictions(
+  user_id,
+  title,
+  description,
+  money_saved_per_month
+) {
   const query = `
     INSERT INTO addiction_items (
       user_id,
